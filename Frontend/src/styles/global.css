@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  --ink: #24211f;
+  --muted: #70665c;
+  --paper: #fbf5ea;
+  --surface: #fffaf1;
+  --line: #e6d8c2;
+  --coral: #000000;
+  --olive: #78845a;
+  --amber: #d7a642;
+  --plum: #5f3f4b;
+  --grey: #62543f;
+  --shadow: 0 24px 70px rgba(52, 37, 24, 0.13);
+  font-family: 'Segoe UI';
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 12% 20%, rgba(216, 95, 69, 0.18), transparent 28rem),
+    linear-gradient(135deg, #fbf5ea 0%, #f7ead8 42%, #eef0dc 100%);
+
+}
+
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h2 {
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+.site-shell {
+  width: 100%;
+}
+
+.main-components {
+  margin: 0 70px 0 70px;
+}
+
+.section {
+  padding: 90px 0;
+  border-top: 1px solid var(--line);
+}
+
+.section-kicker {
+  color: var(--coral);
+  font-weight: 600;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  padding: 0 22px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(36, 33, 31, 0.14);
+}
+
+.button.primary {
+  color: #fffaf1;
+  background: var(--ink);
+}
+
+.button.secondary {
+  background: transparent;
+}
+
+@media (max-width: 860px) {
+  .section-heading {
+    display: block;
+  }
+}
+
+@media (max-width: 560px) {
+
+  .section {
+    padding: 68px 0;
+  }
+}

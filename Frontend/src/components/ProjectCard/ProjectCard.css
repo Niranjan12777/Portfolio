@@ -1,0 +1,43 @@
+.project-card {
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fffdf8;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 20px;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease;
+}
+
+.project-card:hover {
+  border-color: var(--coral);
+  transform: translateY(-4px);
+}
+
+.project-card p {
+  margin-bottom: 54px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.project-card h3 {
+  font-size: 1.55rem;
+  line-height: 1.1;
+}
+
+.project-card span {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+@media (max-width: 860px) {
+  .project-card {
+    min-height: 220px;
+  }
+}
