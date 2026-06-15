@@ -1,6 +1,7 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { getAdminByEmail } from "../repositories/adminRepository.js";
+import { hashPassword, verifyPassword, signJwt } from "../utils/auth.js";
 
 export const loginAdmin = async (email, password) => {
   const admin = await getAdminByEmail(email);
@@ -9,19 +10,17 @@ export const loginAdmin = async (email, password) => {
     throw new Error("Invalid credentials");
   }
 
-  const matched = await bcrypt.compare(password, admin.password);
+  const matched = await verifyPassword(password, admin.password);
 
   if (!matched) {
     throw new Error("Invalid credentials");
   }
 
-  const token = jwt.sign(
+  const token = signJwt(
     {
       id: admin.id,
       email: admin.email
-    },
-    process.env.JWT_SECRET,
-    { expiresIn: "1h" }
+    }
   );
 
   return {
