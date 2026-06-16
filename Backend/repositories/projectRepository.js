@@ -5,7 +5,7 @@ export const getProjects = async () => {
     `SELECT * FROM projects ORDER BY created_at DESC`
   );
 
-  return result.rows;
+  return result.rows || null;
 };
 
 export const createProject = async (
@@ -26,7 +26,7 @@ export const createProject = async (
     [title, description, githubUrl, liveUrl, imageUrl, featured]
   );
 
-  return result.rows[0];
+  return result.rows[0] || null;
 };
 
 export const updateProject = async (
@@ -55,7 +55,7 @@ export const updateProject = async (
     [title, description, githubUrl, liveUrl, imageUrl, featured, id]
   );
 
-  return result.rows[0];
+  return result.rows[0] || null;
 };
 
 export const deleteProject = async (id) => {
