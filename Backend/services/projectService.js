@@ -4,6 +4,10 @@ export const fetchProjects = async () => {
   return await projectRepository.getProjects();
 };
 
+export const fetchProjectCount = async () => {
+  return await projectRepository.getProjectCount();
+};
+
 export const addProject = async (data) => {
   const {
     title,

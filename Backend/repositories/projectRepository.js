@@ -8,6 +8,14 @@ export const getProjects = async () => {
   return result.rows || null;
 };
 
+export const getProjectCount = async () => {
+  const result = await pool.query(
+    `SELECT COUNT(*) AS count FROM projects`
+  );
+
+  return Number(result.rows[0].count);
+};
+
 export const createProject = async (
   title,
   description,

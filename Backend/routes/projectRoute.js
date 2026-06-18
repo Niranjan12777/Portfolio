@@ -6,6 +6,8 @@ const router = express.Router();
 
 router.get("/", projectController.getProjects);
 
+router.get("/", projectController.getProjectCount);
+
 router.post("/", authMiddleware, projectController.createProject);
 
 router.put("/:id", authMiddleware, projectController.updateProject);

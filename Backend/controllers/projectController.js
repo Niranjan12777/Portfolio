@@ -12,6 +12,18 @@ export const getProjects = async (req, res) => {
   }
 };
 
+export const getProjectCount = async (req, res) => {
+  try {
+    const count = await projectService.fetchProjectCount();
+
+    res.status(200).json({ count });
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+};
+
 export const createProject = async (req, res) => {
   try {
     const project = await projectService.addProject(req.body);
