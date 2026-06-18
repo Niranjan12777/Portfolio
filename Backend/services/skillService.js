@@ -4,6 +4,10 @@ export const fetchSkills = async () => {
   return await skillRepository.getSkills();
 };
 
+export const fetchSkillCount = async () => {
+  return await skillRepository.getSkillCount();
+};
+
 export const addSkill = async (data) => {
   const { name } = data;
 

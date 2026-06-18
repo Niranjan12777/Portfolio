@@ -12,6 +12,18 @@ export const getSkills = async (req, res) => {
   }
 };
 
+export const getSkillCount = async (req, res) => {
+  try {
+    const count = await skillService.fetchSkillCount();
+
+    res.status(200).json({ count });
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+};
+
 export const createSkill = async (req, res) => {
   try {
     const skill = await skillService.addSkill(req.body);

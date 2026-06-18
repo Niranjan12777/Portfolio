@@ -8,6 +8,14 @@ export const getSkills = async () => {
   return result.rows || null;
 };
 
+export const getSkillCount = async () => {
+  const result = await pool.query(
+    `SELECT COUNT(*) AS count FROM skills`
+  );
+
+  return Number(result.rows[0].count);
+};
+
 export const createSkill = async (name) => {
   const result = await pool.query(
     `INSERT INTO skills (name) VALUES ($1) RETURNING *`,

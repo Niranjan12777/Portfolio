@@ -6,6 +6,8 @@ const router = express.Router();
 
 router.get("/", skillController.getSkills);
 
+router.get("/", skillController.getSkillCount);
+
 router.post("/", authMiddleware, skillController.createSkill);
 
 router.put("/:id", authMiddleware, skillController.updateSkill);
