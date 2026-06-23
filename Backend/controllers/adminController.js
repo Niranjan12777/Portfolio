@@ -1,10 +1,10 @@
-import { loginAdmin } from "../services/adminService.js";
+import * as adminService from "../services/adminService.js";
 
 export const loginAdmin = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    const data = await loginAdminService(email, password);
+    const data = await adminService.loginAdmin(email, password);
 
     res.json(data);
   } catch (error) {
