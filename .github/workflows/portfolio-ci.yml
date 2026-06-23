@@ -1,0 +1,47 @@
+name: Portfolio CI
+
+on:
+  push:
+    branches:
+      - main
+      - feature-backend
+      - feature-frontend
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: Backend
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm install
+
+  frontend:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: Frontend
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm install
+
+      - run: npm run build
