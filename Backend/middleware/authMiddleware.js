@@ -23,6 +23,10 @@ const authMiddleware = (req, res, next) => {
         error: "Token expired",
       });
     }
+
+    return res.status(401).json({
+      error: "Invalid token",
+    });
   }
 };
 
