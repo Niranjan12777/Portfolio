@@ -11,3 +11,10 @@ export const loginAdmin = async (req, res) => {
     res.status(401).json({ message: error.message });
   }
 };
+
+export const getProfile = async (req, res) => {
+  res.json({
+    id: req.user.id,
+    email: req.user.email,
+  });
+};
