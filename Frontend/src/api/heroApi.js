@@ -4,4 +4,4 @@ export const getHero = () =>
   api.get("/hero");
 
 export const updateHero = (heroData) =>
-  api.post("/hero", heroData);
+  api.put("/hero", heroData);
