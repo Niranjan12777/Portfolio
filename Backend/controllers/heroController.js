@@ -12,7 +12,7 @@ export const getHero = async (req, res) => {
 
 export const updateHero = async (req, res) => {
   try {
-    const hero = await editHeroSection();
+    const hero = await editHeroSection(req.body);
 
     res.status(200).json(hero);
   } catch (err) {
