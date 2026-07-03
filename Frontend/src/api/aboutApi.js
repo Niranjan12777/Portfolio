@@ -4,4 +4,4 @@ export const getAbout = () =>
   api.get("/about");
 
 export const updateAbout = (aboutData) =>
-  api.post("/about", aboutData);
+  api.put("/about", aboutData);
