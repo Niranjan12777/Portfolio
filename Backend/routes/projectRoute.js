@@ -4,9 +4,9 @@ import authMiddleware from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
-router.get("/", projectController.getProjects);
+router.get("/count", projectController.getProjectCount);
 
-router.get("/", projectController.getProjectCount);
+router.get("/", projectController.getProjects);
 
 router.post("/", authMiddleware, projectController.createProject);
 
