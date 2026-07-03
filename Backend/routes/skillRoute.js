@@ -4,9 +4,9 @@ import authMiddleware from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
-router.get("/", skillController.getSkills);
+router.get("/count", skillController.getSkillCount);
 
-router.get("/", skillController.getSkillCount);
+router.get("/", skillController.getSkills);
 
 router.post("/", authMiddleware, skillController.createSkill);
 
