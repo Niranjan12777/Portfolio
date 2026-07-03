@@ -13,12 +13,12 @@ export const editHeroSection = async (data) => {
     hero_image
   } = data;
 
-  return await updateHeroSection(
-    portfolio_title,
+  return await updateHeroSection({
+    portfolioTitle: portfolio_title,
     name,
     role,
     description,
-    hero_image
-  );
+    heroImage: hero_image
+  });
 };
 
