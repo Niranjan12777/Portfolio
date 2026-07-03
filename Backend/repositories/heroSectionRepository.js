@@ -23,7 +23,7 @@ export const updateHeroSection = async ({
       name = $2,
       role = $3,
       description = $4,
-      heroImage = $5,
+      hero_image = $5,
       updated_at = CURRENT_TIMESTAMP
     WHERE id = 1
     RETURNING *
