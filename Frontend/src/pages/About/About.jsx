@@ -1,7 +1,29 @@
-import React from "react";
-import { skills } from "../../data/portfolio.js";
+import React, { useEffect, useState } from "react";
+import { getAbout } from "../../api/aboutApi.js";
+import { getSkills } from "../../api/skillApi.js";
 
 function About() {
+  const [about, setAbout] = useState(null);
+  const [skills, setSkills] = useState([]);
+
+  useEffect(() => {
+    const loadAbout = async () => {
+      try {
+        const [aboutResponse, skillsResponse] = await Promise.all([
+          getAbout(),
+          getSkills(),
+        ]);
+
+        setAbout(aboutResponse.data || null);
+        setSkills(Array.isArray(skillsResponse.data) ? skillsResponse.data : []);
+      } catch (error) {
+        console.error("Failed to load about content", error);
+      }
+    };
+
+    loadAbout();
+  }, []);
+
   return (
     <section
       id="about"
@@ -10,21 +32,15 @@ function About() {
       {/* Left */}
       <div className="flex flex-col h-full">
         <p className="section-kicker text-6xl tracking-tight text-muted mb-15">
-          About Me
+          {about?.heading || "About Me"}
         </p>
 
         <h2 className="text-[clamp(2rem,2vw,3rem)] font-semibold mb-8">
-          A little about me.
+          {about?.subtitle || "A little about me."}
         </h2>
 
         <p className="text-[1.45rem] w-6xl tracking-tight leading-[1.8] text-(--muted)">
-          I work across interface design and React development, turning early
-          ideas into polished screens and production-ready components. My style
-          is direct, modern, and focused on helping people move through a
-          product with confidence. I work across interface design and React development, turning early
-          ideas into polished screens and production-ready components. My style
-          is direct, modern, and focused on helping people move through a
-          product with confidence.
+          {about?.content || "Loading about content..."}
         </p>
       </div>
 
@@ -39,10 +55,10 @@ function About() {
         <div className="grid grid-cols-6 gap-15" aria-label="Skills">
           {skills.map((skill) => (
             <span
-              key={skill}
+              key={skill.id || skill.name}
               className="flex justify-center items-center border border-(--line) h-20 rounded-2xl px-3.5 py-2.5 text-[0.92rem] font-extrabold text-ink bg-[rgba(255,250,241,0.72)]"
             >
-              {skill}
+              {skill.name}
             </span>
           ))}
         </div>

@@ -1,0 +1,112 @@
+.admin-page {
+  color: #24211f;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(216, 95, 69, 0.12), transparent 28rem),
+    linear-gradient(135deg, #fbf5ea 0%, #f7ead8 48%, #eef0dc 100%);
+}
+
+.admin-card {
+  background: rgba(255, 250, 241, 0.92);
+  border: 1px solid #e6d8c2;
+  border-radius: 8px;
+  box-shadow: 0 18px 50px rgba(52, 37, 24, 0.1);
+}
+
+.admin-kicker {
+  margin-bottom: 0.75rem;
+  color: #d85f45;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.admin-input {
+  width: 100%;
+  border: 1px solid #e6d8c2;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  color: #24211f;
+  background: #fffdf8;
+  outline: none;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.admin-input:focus {
+  border-color: #d85f45;
+  box-shadow: 0 0 0 3px rgba(216, 95, 69, 0.16);
+}
+
+.admin-button-primary,
+.admin-button-secondary,
+.admin-button-danger {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0 1rem;
+  font-size: 0.9rem;
+  font-weight: 900;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.admin-button-primary {
+  border: 1px solid #24211f;
+  color: #fffaf1;
+  background: #24211f;
+}
+
+.admin-button-secondary {
+  border: 1px solid #e6d8c2;
+  color: #24211f;
+  background: #fffdf8;
+}
+
+.admin-button-danger {
+  border: 1px solid #f2c3b8;
+  color: #b12d1d;
+  background: #fff4f1;
+}
+
+.admin-button-primary:hover,
+.admin-button-secondary:hover,
+.admin-button-danger:hover,
+.admin-nav-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(36, 33, 31, 0.12);
+}
+
+.admin-button-primary:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+  transform: none;
+  box-shadow: none;
+}
+
+.admin-nav-scroll {
+  scrollbar-width: thin;
+}
+
+.admin-nav-link-active {
+  color: #fffaf1 !important;
+  background: #24211f;
+}
+
+@media (max-width: 640px) {
+  .admin-navbar {
+    position: static;
+  }
+
+  .admin-button-primary,
+  .admin-button-secondary,
+  .admin-button-danger {
+    min-height: 40px;
+    padding-inline: 0.85rem;
+  }
+}

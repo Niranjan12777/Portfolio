@@ -29,18 +29,30 @@
   font-weight: 700;
 }
 
-.navbar nav a {
-  transition: color 180ms ease;
+.main-nav-link {
+  border-radius: 999px;
+  padding: 8px 12px;
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
 }
 
-.navbar nav a:hover {
+.main-nav-link:hover {
   color: var(--coral);
+}
+
+.main-nav-link.active {
+  color: #fffaf1;
+  background: var(--ink);
+  box-shadow: 0 8px 18px rgba(36, 33, 31, 0.12);
 }
 
 @media (max-width: 560px) {
   .navbar {
     align-items: center;
     gap: 18px;
+    padding: 16px 18px;
   }
 
   .navbar nav {
