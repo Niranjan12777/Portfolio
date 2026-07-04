@@ -5,7 +5,7 @@ import {
   useMemo,
   useState,
 } from "react";
-import { getProfile, login } from "../api/admin";
+import { getProfile, login } from "../api/adminApi.js";
 
 const AuthContext = createContext();
 
