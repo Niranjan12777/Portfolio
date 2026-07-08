@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/authContext.jsx";
 import Feedback from "../components/Feedback.jsx";
 
 function Login() {
   const { loginAdmin } = useAuth();
+  const navigate = useNavigate();
   const [credentials, setCredentials] = useState({ email: "", password: "" });
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
@@ -23,7 +25,7 @@ function Login() {
     const result = await loginAdmin(credentials);
 
     if (result.success) {
-      window.location.href = "/admin/dashboard";
+      navigate("/admin/dashboard", { replace: true });
       return;
     }
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
 import AdminLayout from "./components/AdminLayout.jsx";
 import Login from "./pages/Login.jsx";
 import AboutManager from "./pages/AboutManager.jsx";
@@ -8,22 +9,20 @@ import MessagesManager from "./pages/MessagesManager.jsx";
 import ProjectsManager from "./pages/ProjectsManager.jsx";
 import SkillsManager from "./pages/SkillsManager.jsx";
 import { useAuth } from "../context/authContext.jsx";
+
+import ProtectedRoute from "../routes/ProtectedRoute.jsx";
 import "./Admin.css";
 
-const routes = {
-  "/admin": Dashboard,
-  "/admin/dashboard": Dashboard,
-  "/admin/hero": HeroManager,
-  "/admin/about": AboutManager,
-  "/admin/projects": ProjectsManager,
-  "/admin/skills": SkillsManager,
-  "/admin/messages": MessagesManager,
-};
+function ProtectedAdminPage({ children }) {
+  return (
+    <ProtectedRoute>
+      <AdminLayout>{children}</AdminLayout>
+    </ProtectedRoute>
+  );
+}
 
 function AdminApp() {
-  const { loading, isAuthenticated } = useAuth();
-  const path = window.location.pathname;
-  const Page = routes[path] || Dashboard;
+  const { loading } = useAuth();
 
   if (loading) {
     return (
@@ -33,14 +32,18 @@ function AdminApp() {
     );
   }
 
-  if (!isAuthenticated || path === "/admin/login") {
-    return <Login />;
-  }
-
   return (
-    <AdminLayout>
-      <Page />
-    </AdminLayout>
+    <Routes>
+      <Route path="/" element={<Navigate to="dashboard" replace />} />
+      <Route path="login" element={<Login />} />
+      <Route path="dashboard" element={<ProtectedAdminPage><Dashboard /></ProtectedAdminPage>} />
+      <Route path="hero" element={<ProtectedAdminPage><HeroManager /></ProtectedAdminPage>} />
+      <Route path="about" element={<ProtectedAdminPage><AboutManager /></ProtectedAdminPage>} />
+      <Route path="projects" element={<ProtectedAdminPage><ProjectsManager /></ProtectedAdminPage>} />
+      <Route path="skills" element={<ProtectedAdminPage><SkillsManager /></ProtectedAdminPage>} />
+      <Route path="messages" element={<ProtectedAdminPage><MessagesManager /></ProtectedAdminPage>} />
+      <Route path="*" element={<Navigate to="dashboard" replace />} />
+    </Routes>
   );
 }
 
