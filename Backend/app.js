@@ -10,7 +10,16 @@ import messageRoutes from "./routes/messageRoute.js";
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      process.env.FRONTEND_URL,
+    ],
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 
 app.use("/api/admin", adminRoutes);
