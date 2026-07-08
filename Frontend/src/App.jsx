@@ -20,6 +20,7 @@ function Portfolio() {
         <Skills />
         <Projects />
         <Contact />
+        <Footer />
       </div>
     </main>
   );
