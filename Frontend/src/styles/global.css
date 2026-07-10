@@ -62,13 +62,34 @@ button {
 }
 
 .section {
-  padding: 90px 0;
+  background: linear-gradient(135deg,
+      #fff8f0 0%,
+      #f7ebdc 50%);
+  padding: 30px 30px;
+  margin: 50px 0 50px 0;
   border-top: 1px solid var(--line);
+  border-radius: 30px;
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.08),
+    0 18px 40px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .section-kicker {
+  position: relative;
   color: var(--coral);
   font-weight: 600;
+}
+
+.section-kicker::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -12px;
+  width: 70px;
+  height: 4px;
+  background: #D8A24A;
+  border-radius: 999px;
 }
 
 .section-heading {
