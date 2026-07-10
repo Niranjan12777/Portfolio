@@ -34,9 +34,12 @@ function Home() {
   return (
     <section className="hero" id="home">
       <div className="hero-copy">
-        <p className="section-kicker text-6xl tracking-tight text-muted mb-15">
-          {hero?.portfolio_title || "Portfolio"}
-        </p>
+        <div className="flex">
+          <p className=" bg-orange-200/40 text-sm border-solid border border-amber-700/10 rounded-2xl font-bold px-2.5 py-1.5 tracking-tight text-amber-700/50 mb-0.5 sm:mb-8">
+            {hero?.portfolio_title || "Portfolio"}
+          </p>
+        </div>
+
         <h1 className="leading-24">
           <span className="inline-block w-full font-bold">
             {hero?.name || "Hello this is Name"}
