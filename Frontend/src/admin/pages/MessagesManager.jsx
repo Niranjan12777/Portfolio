@@ -57,7 +57,7 @@ function MessagesManager() {
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                 <div>
                   <h2 className="text-xl font-black text-[#24211f]">{message.name || "Unknown sender"}</h2>
-                  <a className="text-sm font-bold text-[#70665c]" href={`mailto:${message.email}`}>
+                  <a className="break-all text-sm font-bold text-[#70665c]" href={`mailto:${message.email}`}>
                     {message.email}
                   </a>
                 </div>
@@ -65,7 +65,7 @@ function MessagesManager() {
                   {formatDate(message.created_at || message.createdAt)}
                 </time>
               </div>
-              <p className="leading-7 text-[#62543f]">{message.message}</p>
+              <p className="break-words leading-7 text-[#62543f]">{message.message}</p>
             </article>
           ))}
         </div>
