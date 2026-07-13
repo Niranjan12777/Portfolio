@@ -185,7 +185,7 @@ function ProjectsManager() {
                   </p>
                   <h2 className="mt-2 text-2xl font-black">{project.title}</h2>
                 </div>
-                <div className="flex gap-2">
+                <div className="flex flex-wrap gap-2">
                   <button className="admin-button-secondary" type="button" onClick={() => openEdit(project)}>
                     Edit
                   </button>
