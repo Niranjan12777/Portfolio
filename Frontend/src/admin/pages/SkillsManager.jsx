@@ -120,7 +120,7 @@ function SkillsManager() {
           {skills.map((skill) => (
             <article className="admin-card flex items-center justify-between gap-3 p-4" key={getId(skill)}>
               <span className="font-black text-[#24211f]">{skill.name}</span>
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2">
                 <button
                   className="admin-button-secondary"
                   type="button"
