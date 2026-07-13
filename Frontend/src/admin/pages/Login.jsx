@@ -49,7 +49,7 @@ function Login() {
               type="email"
               value={credentials.email}
               onChange={handleChange}
-              placeholder="admin@example.com"
+              placeholder="example@gmail.com"
               required
             />
           </label>
