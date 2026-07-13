@@ -69,3 +69,14 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 560px) {
+  .contact-form input,
+  .contact-form textarea {
+    padding-right: 14px;
+  }
+
+  .contact-form button {
+    width: 100%;
+  }
+}

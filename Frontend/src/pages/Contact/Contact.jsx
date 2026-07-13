@@ -27,8 +27,8 @@ function Contact() {
           </p>
         </div>
 
+        <div className="flex flex-row gap-5 md: mt-8">
 
-        <div className="flex flex-row gap-5">
           <a href="mailto:nkammar45@gmail.com" className="flex items-center gap-3 hover:text-white transition-colors">
             <FaEnvelope className="size-7" />
           </a>
