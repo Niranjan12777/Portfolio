@@ -39,7 +39,6 @@ function Home() {
             {hero?.portfolio_title || "Portfolio"}
           </p>
         </div>
-
         <h1 className="leading-24">
           <span className="inline-block w-full font-bold">
             {hero?.name || "Hello this is Name"}

@@ -22,6 +22,11 @@
   letter-spacing: 0;
 }
 
+.hero-panel {
+  width: 100%;
+  max-width: 500px;
+  justify-self: center;
+}
 
 .intro {
   max-width: 630px;
@@ -37,38 +42,20 @@
   margin-top: 34px;
 }
 
-.hero-panel {
-  position: relative;
-  display: grid;
-  gap: 24px;
-  padding: clamp(22px, 4vw, 34px);
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  box-shadow: var(--shadow);
-}
-
-.hero-panel::before {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  width: 76px;
-  height: 76px;
-  background: var(--amber);
-  border-radius: 50%;
-  content: "";
-}
-
 .portrait-mark {
   position: relative;
   display: grid;
-  min-height: 360px;
+  aspect-ratio: 1/1;
   place-items: center;
   overflow: hidden;
   background:
     linear-gradient(145deg, rgba(120, 132, 90, 0.92), rgba(95, 63, 75, 0.9)),
     var(--olive);
   border-radius: 8px;
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.08),
+    0 18px 40px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .portrait-mark::before,
@@ -108,10 +95,17 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
+  margin-top: 10px;
 }
 
 .stat-grid div {
-  background: #fffdf8;
+  background: linear-gradient(135deg,
+      #fff8f0 0%,
+      #f7ebdc 100%);
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.08),
+    0 18px 40px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 20px;
@@ -138,7 +132,8 @@
 
 @media (max-width: 560px) {
   .hero h1 {
-    font-size: 2.65rem;
+    font-size: clamp(2.2rem, 13vw, 2.65rem);
+    line-height: 1.08;
   }
 
   .portrait-mark {
@@ -147,5 +142,9 @@
 
   .stat-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero-actions .button {
+    width: 100%;
   }
 }
