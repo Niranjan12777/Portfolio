@@ -28,11 +28,11 @@ function Skills() {
           Skills
         </p>
 
-        <div className="grid grid-cols-6 gap-15" aria-label="Skills">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6 lg:gap-15" aria-label="Skills">
           {skills.map((skill) => (
             <span
               key={skill.id || skill.name}
-              className="flex justify-center items-center border border-(--line) h-20 rounder-2xl px-3.5 py-2.5 text-[0.92rem] font-extrabold text-ink bg-[rgba(255,250,241,0.72)]"
+              className="flex min-h-14 justify-center items-center border border-(--line) rounded-2xl px-3.5 py-2.5 text-center text-[0.92rem] font-extrabold text-ink bg-[rgba(255,250,241,0.72)] break-words"
             >
               {skill.name}
             </span>
