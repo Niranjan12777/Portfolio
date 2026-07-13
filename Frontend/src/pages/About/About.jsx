@@ -33,7 +33,7 @@ function About() {
           {about?.subtitle || "A little about me."}
         </h2>
 
-        <p className="text-[1.45rem] w-6xl tracking-tight leading-[1.8] text-(--muted)">
+        <p className="max-w-4xl text-[clamp(1rem,3.5vw,1.45rem)] tracking-tight leading-[1.8] text-(--muted)">
           {about?.content || "Loading about content..."}
         </p>
       </div>
