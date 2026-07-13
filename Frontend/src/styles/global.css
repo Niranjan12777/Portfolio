@@ -68,7 +68,7 @@ button {
   padding: 30px 30px;
   margin: 50px 0 50px 0;
   border-top: 1px solid var(--line);
-  border-radius: 30px;
+  border-radius: 10px;
   box-shadow:
     0 6px 16px rgba(0, 0, 0, 0.08),
     0 18px 40px rgba(0, 0, 0, 0.05),
@@ -76,20 +76,8 @@ button {
 }
 
 .section-kicker {
-  position: relative;
   color: var(--coral);
   font-weight: 600;
-}
-
-.section-kicker::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -12px;
-  width: 70px;
-  height: 4px;
-  background: #D8A24A;
-  border-radius: 999px;
 }
 
 .section-heading {
@@ -133,11 +121,16 @@ button {
   .section-heading {
     display: block;
   }
+
+  .main-components {
+    margin: 0 20px 0 20px;
+  }
 }
 
 @media (max-width: 560px) {
 
   .section {
-    padding: 68px 0;
+    padding: 32px 18px;
+    margin: 28px 0;
   }
 }
