@@ -11,9 +11,9 @@ export const editAbout = async (data) => {
     content,
   } = data;
 
-  return await aboutRepository.updateAbout(
+  return await aboutRepository.updateAbout({
     heading,
     subtitle,
     content
-  );
+  });
 };
