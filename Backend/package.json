@@ -17,5 +17,5 @@
     "start": "node server.js"
   },
   "author": "Niranjan",
-  "license": "ISC"
+  "license": "MIT"
 }
