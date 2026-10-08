@@ -144,7 +144,9 @@
     grid-template-columns: 1fr;
   }
 
-  .hero-actions .button {
+  <<<<<<< Updated upstream .hero-actions .button {
     width: 100%;
   }
+
+  =======>>>>>>>Stashed changes
 }
