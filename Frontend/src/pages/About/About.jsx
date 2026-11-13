@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getAbout } from "../../api/aboutApi.js";
+import { UserRound } from "lucide-react";
 
 function About() {
   const [about, setAbout] = useState(null);
@@ -21,22 +22,25 @@ function About() {
   return (
     <section
       id="about"
-      className="section grid gap-[clamp(28px,7vw,84px)] max-[860px]:grid-cols-1 py-18 border-t border-(--line)"
+      className="section"
     >
-      {/* Left */}
-      <div className="flex flex-col h-full">
-        <p className="section-kicker text-6xl tracking-tight text-muted mb-15">
+
+      <div className="section-heading">
+        <div className="px-5 py-4 bg-(--olive) text-(--primary) rounded-3xl inline-flex">
+          <UserRound size={40} />
+        </div>
+        <p className="section-kicker text-6xl tracking-tight text-muted">
           {about?.heading || "About Me"}
         </p>
 
-        <h2 className="text-[clamp(2rem,2vw,3rem)] font-semibold mb-8">
-          {about?.subtitle || "A little about me."}
-        </h2>
-
-        <p className="w-full text-[clamp(1rem,3.5vw,1.45rem)] tracking-tight leading-[1.8] text-(--muted)">
-          {about?.content || "Loading about content..."}
-        </p>
       </div>
+
+      <h2 className="text-[clamp(2rem,2vw,3rem)] font-semibold mt-15 mb-8">
+        {about?.subtitle || "A little about me."}
+      </h2>
+      <p className="w-full text-[clamp(1rem,3.5vw,1.45rem)] tracking-tight leading-[1.8] text-(--muted)">
+        {about?.content || "Loading about content..."}
+      </p>
     </section>
   );
 }

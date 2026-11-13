@@ -18,7 +18,7 @@
   display: grid;
   gap: 8px;
   font-size: 0.9rem;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .contact-form input,
@@ -50,7 +50,7 @@
   border-radius: 999px;
   padding: 0 22px;
   color: #fffaf1;
-  background: var(--ink);
+  background: var(--primary);
   font-weight: 800;
   cursor: pointer;
   transition:
@@ -71,6 +71,7 @@
 }
 
 @media (max-width: 560px) {
+
   .contact-form input,
   .contact-form textarea {
     padding-right: 14px;

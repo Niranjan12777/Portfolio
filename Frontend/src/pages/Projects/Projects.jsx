@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ProjectCard from "../../components/ProjectCard/ProjectCard.jsx";
 import { getProjects } from "../../api/projectApi.js";
+import { Layers } from "lucide-react";
 import "./Projects.css";
 
 function Projects() {
@@ -25,7 +26,10 @@ function Projects() {
   return (
     <section className="section" id="projects">
       <div className="section-heading">
-        <p className="section-kicker section-kicker text-6xl tracking-wide text-muted mb-15">
+        <div className="px-5 py-4 bg-(--olive) text-(--primary) rounded-3xl inline-flex">
+          <Layers size={40} />
+        </div>
+        <p className="section-kicker section-kicker text-6xl tracking-wide text-muted">
           Projects
         </p>
       </div>
