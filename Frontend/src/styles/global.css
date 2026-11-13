@@ -2,16 +2,14 @@
 
 :root {
   color-scheme: light;
-  --ink: #24211f;
+  --ink: #252321;
   --muted: #70665c;
   --paper: #fbf5ea;
   --surface: #fffaf1;
   --line: #e6d8c2;
-  --coral: #000000;
-  --olive: #78845a;
-  --amber: #d7a642;
-  --plum: #5f3f4b;
-  --grey: #62543f;
+  --primary: #98472C;
+  --olive: #eadac1;
+  --accent: #B85C38;
   --shadow: 0 24px 70px rgba(52, 37, 24, 0.13);
   font-family: 'Segoe UI';
 }
@@ -58,7 +56,7 @@ button {
 }
 
 .main-components {
-  margin: 0 70px 0 70px;
+  margin: 0 150px 0 150px;
 }
 
 .section {
@@ -82,8 +80,8 @@ button {
 
 .section-heading {
   display: flex;
-  align-items: end;
-  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
   gap: 24px;
 }
 
@@ -92,7 +90,7 @@ button {
   min-height: 48px;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--ink);
+  border: 1px solid var(--primary);
   border-radius: 999px;
   padding: 0 22px;
   font-weight: 800;
@@ -110,18 +108,20 @@ button {
 
 .button.primary {
   color: #fffaf1;
-  background: var(--ink);
+  background: var(--primary);
 }
 
 .button.secondary {
   background: transparent;
 }
 
-@media (max-width: 860px) {
-  .section-heading {
-    display: block;
+@media (max-width: 1200px) {
+  .main-components {
+    margin: 0 70px 0 70px;
   }
+}
 
+@media (max-width: 860px) {
   .main-components {
     margin: 0 20px 0 20px;
   }

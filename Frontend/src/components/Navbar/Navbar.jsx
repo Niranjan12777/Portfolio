@@ -39,8 +39,9 @@ function Navbar() {
 
   return (
     <header className="navbar" aria-label="Primary navigation">
-      <a className="brand" href="#home" aria-label="Portfolio home">
-        N.
+      <a className="flex" href="#home" aria-label="Portfolio home">
+        <span className="logo-icon">N</span>
+        <span className="logo-title">Niranjan</span>
       </a>
       <nav>
         {navLinks.map((link) => (

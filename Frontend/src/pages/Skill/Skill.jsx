@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getSkills } from "../../api/skillApi.js";
+import { CodeXml } from "lucide-react";
 
 function Skills() {
   const [skills, setSkills] = useState([]);
@@ -24,9 +25,15 @@ function Skills() {
       className="section grid gap-[clamp(28px,7vw,84px)] max-[860px]:grid-cols-1 py-18 border-t border-(--line)"
     >
       <div>
-        <p className="section-kicker text-6xl tracking-tight text-muted mb-20">
-          Skills
-        </p>
+        <div className="section-heading">
+          <div className="px-5 py-4 bg-(--olive) text-(--primary) rounded-3xl inline-flex">
+            <CodeXml size={40} />
+          </div>
+          <p className="section-kicker text-6xl tracking-tight text-muted">
+            Skills
+          </p>
+        </div>
+
 
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6 lg:gap-15" aria-label="Skills">
           {skills.map((skill) => (

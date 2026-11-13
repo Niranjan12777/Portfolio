@@ -26,6 +26,7 @@
   width: 100%;
   border: 1px solid #e6d8c2;
   border-radius: 8px;
+  font-weight: 600;
   padding: 0.85rem 1rem;
   color: #24211f;
   background: #fffdf8;
@@ -47,7 +48,8 @@
   min-height: 42px;
   align-items: center;
   justify-content: center;
-  border-radius: 999px;
+  margin-top: 20px;
+  border-radius: 8px;
   padding: 0 1rem;
   font-size: 0.9rem;
   font-weight: 900;
@@ -80,8 +82,8 @@
 .admin-button-secondary:hover,
 .admin-button-danger:hover,
 .admin-nav-link:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 22px rgba(36, 33, 31, 0.12);
+  color: #fffaf1;
+  transition: 0.2s;
 }
 
 .admin-button-primary:disabled {
@@ -97,13 +99,10 @@
 
 .admin-nav-link-active {
   color: #fffaf1 !important;
-  background: #24211f;
+  background: var(--primary);
 }
 
 @media (max-width: 640px) {
-  .admin-navbar {
-    position: static;
-  }
 
   .admin-button-primary,
   .admin-button-secondary,

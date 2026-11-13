@@ -7,20 +7,25 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 import { MdMessage } from "react-icons/md";
+import { Send } from "lucide-react";
 
 function Contact() {
   return (
     <section className="section contact-section" id="contact">
       <div className="flex flex-col justify-around">
         <div>
-          <p className="section-kicker text-6xl tracking-tight text-muted mb-15">
-            Contact
-          </p>
+          <div className="section-heading">
+            <div className="px-5 py-4 bg-(--olive) text-(--primary) rounded-3xl inline-flex">
+              <Send size={40} />
+            </div>
+            <p className="section-kicker text-6xl tracking-tight text-muted">
+              Contact
+            </p>
+          </div>
 
           <h2 className="text-[clamp(2rem,2vw,3rem)] font-semibold mb-8">
             Have a project in mind?
           </h2>
-
           <p>
             Send a note and I will help shape the next step, from a fresh landing
             page to a complete product interface.
@@ -45,7 +50,7 @@ function Contact() {
 
       <form className="contact-form">
         <label>
-          Name
+          <span className="font-black">Name</span>
           <div className="relative mt-2">
             <FaUser className="absolute left-4 top-1/2 -translate-y-1/2" />
             <input type="text" name="name" placeholder="Your name" />
@@ -53,7 +58,7 @@ function Contact() {
         </label>
 
         <label>
-          Email
+          <span className="font-black">Email</span>
           <div className="relative mt-2">
             <FaEnvelope className="absolute left-4 top-1/2 -translate-y-1/2" />
             <input type="email" name="email" placeholder="you@example.com" />
@@ -61,7 +66,7 @@ function Contact() {
         </label>
 
         <label>
-          Message
+          <span className="font-black">Message</span>
           <div className="relative mt-2">
             <MdMessage className="absolute left-4 top-5" />
             <textarea name="message" rows="5" placeholder="Tell me about it" />
