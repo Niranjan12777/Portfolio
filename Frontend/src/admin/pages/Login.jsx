@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/authContext.jsx";
+import { Mail, Lock } from "lucide-react";
 import Feedback from "../components/Feedback.jsx";
 
 function Login() {
@@ -41,8 +42,12 @@ function Login() {
         <p className="mt-2 text-[#70665c]">Sign in to manage your portfolio content.</p>
 
         <div className="mt-6 grid gap-4">
-          <label className="grid gap-2 text-sm font-black">
-            Email
+          <label className="grid gap-2 text-sm">
+            <label className="flex items-center">
+              <Mail size={20} className="mr-1"></Mail>
+              <span className="font-black">Email</span>
+            </label>
+
             <input
               className="admin-input"
               name="email"
@@ -53,8 +58,12 @@ function Login() {
               required
             />
           </label>
-          <label className="grid gap-2 text-sm font-black">
-            Password
+          <label className="grid gap-2 text-sm">
+            <label className="flex items-center">
+              <Lock size={20} className="mr-1"></Lock>
+              <span className="font-black">Password</span>
+            </label>
+
             <input
               className="admin-input"
               name="password"
