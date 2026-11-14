@@ -16,7 +16,7 @@ function Contact() {
         <div>
           <div className="section-heading">
             <div className="px-5 py-4 bg-(--olive) text-(--primary) rounded-3xl inline-flex">
-              <Send size={40} />
+              <Send className="section-icon" />
             </div>
             <p className="section-kicker text-6xl tracking-tight text-muted">
               Contact
