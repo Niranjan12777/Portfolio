@@ -27,9 +27,9 @@ function Projects() {
     <section className="section" id="projects">
       <div className="section-heading">
         <div className="px-5 py-4 bg-(--olive) text-(--primary) rounded-3xl inline-flex">
-          <Layers size={40} />
+          <Layers className="section-icon" />
         </div>
-        <p className="section-kicker section-kicker text-6xl tracking-wide text-muted">
+        <p className="section-kicker text-6xl tracking-wide text-muted">
           Projects
         </p>
       </div>

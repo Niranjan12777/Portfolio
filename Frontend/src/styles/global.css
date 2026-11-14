@@ -74,7 +74,7 @@ button {
 }
 
 .section-kicker {
-  color: var(--coral);
+  color: var(--ink);
   font-weight: 600;
 }
 
@@ -83,6 +83,11 @@ button {
   align-items: center;
   margin-bottom: 60px;
   gap: 24px;
+}
+
+.section-icon {
+  width: 40px;
+  height: 40px;
 }
 
 .button {
@@ -132,5 +137,18 @@ button {
   .section {
     padding: 32px 18px;
     margin: 28px 0;
+  }
+
+  .section-kicker {
+    font-size: 35px;
+  }
+
+  .section-heading {
+    gap: 15px
+  }
+
+  .section-icon {
+    width: 28px;
+    height: 28px;
   }
 }

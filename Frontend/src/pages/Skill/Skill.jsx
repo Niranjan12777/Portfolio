@@ -27,7 +27,7 @@ function Skills() {
       <div>
         <div className="section-heading">
           <div className="px-5 py-4 bg-(--olive) text-(--primary) rounded-3xl inline-flex">
-            <CodeXml size={40} />
+            <CodeXml className="section-icon" />
           </div>
           <p className="section-kicker text-6xl tracking-tight text-muted">
             Skills
